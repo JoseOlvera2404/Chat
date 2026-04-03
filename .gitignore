@@ -1,0 +1,20 @@
+# Node
+node_modules/
+.env
+
+# Build
+dist/
+backend/dist/
+frontend/.next/
+
+# Typescript
+*.tsbuildinfo
+
+# Script
+script.sql
+
+# Logs
+*.log
+
+# OS
+.DS_Store
