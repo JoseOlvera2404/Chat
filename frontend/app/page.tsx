@@ -25,8 +25,9 @@ export default function Home() {
 
           <div className="flex justify-center gap-4 flex-wrap pt-4">
             <Link href="/register">
-              <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-50 shadow-xl font-semibold px-8">
-                Comenzar ahora →
+              <Button size="lg" className="relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-xl font-semibold px-8 transition-all duration-300 group">
+                <span className="relative z-10">Comenzar ahora →</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
               </Button>
             </Link>
             <Link href="/login">
@@ -72,8 +73,9 @@ export default function Home() {
               Descarga nuestra aplicación móvil y mantente conectado donde quiera que estés
             </p>
             <a href="/downloads/ChatApp.apk" download>
-              <Button size="lg" className="bg-purple-500 hover:bg-purple-400 text-white shadow-lg px-8">
-                ⬇️ Descargar APK
+              <Button size="lg" className="relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-lg px-8 transition-all duration-300 group">
+                <span className="relative z-10">⬇️ Descargar APK</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></span>
               </Button>
             </a>
           </div>
