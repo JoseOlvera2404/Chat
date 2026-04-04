@@ -44,15 +44,17 @@ export default function FriendRequests(){
 
   return(
 
-    <div className="border-b">
+    <div className="border-b border-[#1F1F1F]">
 
       <button
         onClick={()=>setOpen(!open)}
-        className="w-full p-3 text-left font-semibold flex justify-between"
+        className="w-full p-3 text-left flex justify-between items-center hover:bg-[#1A1A1A] transition-colors rounded-lg"
       >
-        Solicitudes
+        <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+          Solicitudes
+        </span>
         {requests.length > 0 && (
-          <span className="text-sm bg-red-500 text-white rounded px-2">
+          <span className="text-xs bg-[#9B4DFF] text-white rounded-full px-2 py-0.5 min-w-[20px] text-center">
             {requests.length}
           </span>
         )}
@@ -60,11 +62,11 @@ export default function FriendRequests(){
 
       {open && (
 
-        <div className="p-2 space-y-2">
+        <div className="p-3 space-y-2">
 
           {requests.length === 0 && (
-            <p className="text-sm text-gray-500">
-              No hay solicitudes
+            <p className="text-sm text-gray-500 text-center py-4">
+              No hay solicitudes pendientes
             </p>
           )}
 
@@ -72,23 +74,23 @@ export default function FriendRequests(){
 
             <div
               key={req.id}
-              className="flex items-center justify-between text-sm"
+              className="flex items-center justify-between p-2 bg-[#1A1A1A] rounded-lg"
             >
 
-              <span>{req.name}</span>
+              <span className="text-white text-sm font-medium">{req.name}</span>
 
               <div className="flex gap-2">
 
                 <button
                   onClick={()=>accept(req.id)}
-                  className="text-green-600"
+                  className="text-green-400 hover:text-green-300 text-sm px-3 py-1 rounded-md hover:bg-green-500/10 transition-colors"
                 >
                   Aceptar
                 </button>
 
                 <button
                   onClick={()=>reject(req.id)}
-                  className="text-red-600"
+                  className="text-red-400 hover:text-red-300 text-sm px-3 py-1 rounded-md hover:bg-red-500/10 transition-colors"
                 >
                   Rechazar
                 </button>

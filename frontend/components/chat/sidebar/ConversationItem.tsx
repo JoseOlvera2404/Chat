@@ -15,38 +15,38 @@ export default function ConversationItem({ conversation }: any) {
 
     <div
       onClick={handleClick}
-      className="flex items-center gap-3 p-3 hover:bg-gray-100 cursor-pointer"
+      className="flex items-center gap-3 p-3 mx-2 my-1 rounded-xl hover:bg-[#1A1A1A] cursor-pointer transition-all duration-200 group"
     >
 
-      <Avatar>
+      <Avatar className="border-2 border-[#2F2F2F] group-hover:border-[#9B4DFF] transition-colors">
 
         {conversation.avatar && (
           <AvatarImage src={conversation.avatar} />
         )}
 
-        <AvatarFallback>
+        <AvatarFallback className="bg-[#1F1F1F] text-white">
           {conversation.name?.[0] ?? "U"}
         </AvatarFallback>
 
       </Avatar>
 
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
 
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center gap-2">
 
-          <div className="font-medium">
+          <div className="font-medium text-white truncate">
             {conversation.name}
           </div>
 
           {conversation.unread_count > 0 && (
-            <div className="text-xs bg-blue-500 text-white px-2 rounded-full">
+            <div className="text-xs bg-[#9B4DFF] text-white px-2 py-0.5 rounded-full font-medium min-w-[20px] text-center">
               {conversation.unread_count}
             </div>
           )}
 
         </div>
 
-        <div className="text-sm text-gray-500 truncate">
+        <div className="text-sm text-gray-400 truncate">
           {conversation.last_message ?? "Sin mensajes"}
         </div>
 
