@@ -68,21 +68,21 @@ export default function ChatHeader(){
       return "Varios están escribiendo...";
     }
 
-    return "online";
+    return "En línea";
 
   };
 
   return(
 
-    <div className="flex items-center gap-3 border-b p-4 bg-white">
+    <div className="flex items-center gap-3 border-b border-[#1F1F1F] p-4 bg-[#0D0D0D]">
 
-      <Avatar>
+      <Avatar className="border-2 border-[#2F2F2F]">
 
         {activeConversation?.avatar && (
           <AvatarImage src={activeConversation.avatar}/>
         )}
 
-        <AvatarFallback>
+        <AvatarFallback className="bg-[#1F1F1F] text-white">
           {activeConversation?.name?.[0] ?? "U"}
         </AvatarFallback>
 
@@ -90,12 +90,12 @@ export default function ChatHeader(){
 
       <div>
 
-        <div className="font-semibold">
+        <div className="font-semibold text-white">
           {activeConversation?.name ?? "Usuario"}
         </div>
 
-        <div className="text-xs text-gray-500">
-          {typingUsers.length > 0 ? typingText() : "online"}
+        <div className="text-xs text-green-400">
+          {typingUsers.length > 0 ? typingText() : "En línea"}
         </div>
 
       </div>
