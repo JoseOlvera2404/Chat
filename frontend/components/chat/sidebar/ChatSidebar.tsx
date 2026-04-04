@@ -10,23 +10,34 @@ export default function ChatSidebar(){
 
   return(
 
-    <div className="w-72 border-r bg-white flex flex-col h-full overflow-hidden">
+    <div className="w-80 bg-[#0D0D0D] flex flex-col h-full overflow-hidden border-r border-[#1F1F1F]">
 
-      <UserProfile/>
-      <SearchUsers/>
-      <FriendRequests/>
+      {/* Perfil de usuario - área superior */}
+      <div className="p-4 border-b border-[#1F1F1F]">
+        <UserProfile/>
+      </div>
 
-      <div className="p-4 flex justify-between items-center border-b">
+      {/* Búsqueda de usuarios */}
+      <div className="px-4 pt-4 pb-2">
+        <SearchUsers/>
+      </div>
 
-        <span className="text-lg font-semibold">
+      {/* Solicitudes de amistad */}
+      <div className="px-4 pb-2">
+        <FriendRequests/>
+      </div>
+
+      {/* Header de conversaciones */}
+      <div className="px-4 py-3 flex justify-between items-center border-t border-[#1F1F1F] mt-2">
+        <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">
           Conversaciones
         </span>
 
         <NewConversationButton/>
-
       </div>
 
-      <div className="flex-1 overflow-hidden">
+      {/* Lista de conversaciones */}
+      <div className="flex-1 overflow-y-auto">
         <ConversationList/>
       </div>
 

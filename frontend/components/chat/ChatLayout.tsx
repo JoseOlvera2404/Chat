@@ -7,7 +7,7 @@ export default function ChatLayout(){
 
   return(
 
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-[#0D0D0D]">
 
       <ChatSidebar/>
 
