@@ -10,62 +10,112 @@ export const sendVerificationCode = async (
   await resend.emails.send({
     from: process.env.EMAIL_FROM as string,
     to: email,
-    subject: "Tu código de verificación",
+    subject: "Código de acceso",
     html: `
     <div style="
-      font-family: Arial, Helvetica, sans-serif;
-      background:#f5f7fb;
-      padding:40px;
-      text-align:center;
+      margin:0;
+      padding:0;
+      background:#0f172a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:#e2e8f0;
     ">
 
-      <div style="
-        max-width:500px;
-        margin:auto;
-        background:white;
-        padding:40px;
-        border-radius:10px;
-        box-shadow:0 5px 20px rgba(0,0,0,0.08);
-      ">
+      <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 0;">
+        <tr>
+          <td align="center">
 
-        <h2 style="margin-bottom:10px;color:#111;">
-          Verificación de cuenta
-        </h2>
+            <table width="520" cellpadding="0" cellspacing="0" style="
+              background:linear-gradient(145deg, #020617, #1e293b);
+              border-radius:16px;
+              padding:40px;
+              box-shadow:0 0 40px rgba(59,130,246,0.15);
+            ">
 
-        <p style="color:#555;margin-bottom:30px;">
-          Usa el siguiente código para continuar:
-        </p>
+              <!-- Header -->
+              <tr>
+                <td align="center" style="padding-bottom:20px;">
+                  <h1 style="
+                    margin:0;
+                    font-size:22px;
+                    letter-spacing:1px;
+                    color:#38bdf8;
+                  ">
+                    Acceso seguro
+                  </h1>
+                </td>
+              </tr>
 
-        <div style="
-          font-size:32px;
-          font-weight:bold;
-          letter-spacing:6px;
-          background:#f0f3ff;
-          padding:15px 25px;
-          border-radius:8px;
-          display:inline-block;
-          color:#3b5bdb;
-        ">
-          ${code}
-        </div>
+              <!-- Message -->
+              <tr>
+                <td align="center" style="padding-bottom:30px;">
+                  <p style="
+                    margin:0;
+                    font-size:15px;
+                    color:#94a3b8;
+                  ">
+                    Introduce este código para continuar con tu sesión
+                  </p>
+                </td>
+              </tr>
 
-        <p style="
-          margin-top:30px;
-          color:#777;
-          font-size:14px;
-        ">
-          Este código expira en <b>10 minutos</b>.
-        </p>
+              <!-- Code -->
+              <tr>
+                <td align="center">
+                  <div style="
+                    display:inline-block;
+                    padding:18px 30px;
+                    font-size:34px;
+                    font-weight:700;
+                    letter-spacing:10px;
+                    border-radius:12px;
+                    background:#020617;
+                    border:1px solid rgba(56,189,248,0.3);
+                    color:#38bdf8;
+                    box-shadow:0 0 15px rgba(56,189,248,0.25);
+                  ">
+                    ${code}
+                  </div>
+                </td>
+              </tr>
 
-        <p style="
-          margin-top:25px;
-          color:#999;
-          font-size:12px;
-        ">
-          Si no solicitaste este código puedes ignorar este mensaje.
-        </p>
+              <!-- Expiration -->
+              <tr>
+                <td align="center" style="padding-top:30px;">
+                  <p style="
+                    margin:0;
+                    font-size:13px;
+                    color:#64748b;
+                  ">
+                    Válido por 10 minutos
+                  </p>
+                </td>
+              </tr>
 
-      </div>
+              <!-- Divider -->
+              <tr>
+                <td style="padding:25px 0;">
+                  <hr style="border:none;height:1px;background:#1e293b;">
+                </td>
+              </tr>
+
+              <!-- Footer -->
+              <tr>
+                <td align="center">
+                  <p style="
+                    margin:0;
+                    font-size:12px;
+                    color:#475569;
+                  ">
+                    Si no reconoces esta solicitud, puedes ignorar este correo.
+                  </p>
+                </td>
+              </tr>
+
+            </table>
+
+          </td>
+        </tr>
+      </table>
 
     </div>
     `
