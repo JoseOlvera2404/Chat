@@ -95,12 +95,16 @@ export default function LoginPage() {
 
   return (
 
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+    <div className="flex min-h-screen items-center justify-center bg-[#0D0D0D]">
 
-      <Card className="w-96 p-6 space-y-5">
+      <Card className="w-96 p-6 space-y-5 bg-[#121212] border-[#1F1F1F] shadow-xl">
 
-        <div className="text-center space-y-1">
-          <h1 className="text-2xl font-bold">
+        <div className="flex justify-center mb-2">
+          <div className="w-10 h-1 rounded-full bg-[#9B4DFF]"></div>
+        </div>
+
+        <div className="text-center space-y-2">
+          <h1 className="text-2xl font-medium text-white tracking-tight">
             Iniciar sesión
           </h1>
 
@@ -118,41 +122,52 @@ export default function LoginPage() {
             placeholder="Email"
             value={email}
             onChange={(e)=>setEmail(e.target.value)}
+            className="bg-[#1A1A1A] border-[#2F2F2F] text-white placeholder:text-gray-500 focus:border-[#9B4DFF] focus:ring-[#9B4DFF]/20"
           />
 
           <Input
             type="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
+            className="bg-[#1A1A1A] border-[#2F2F2F] text-white placeholder:text-gray-500 focus:border-[#9B4DFF] focus:ring-[#9B4DFF]/20"
           />
 
           {error && (
-            <p className="text-sm text-red-500 text-center">
+            <p className="text-sm text-red-400 text-center bg-red-500/10 py-2 rounded-lg">
               {error}
             </p>
           )}
 
-          <Button className="w-full">
+          <Button className="w-full bg-[#9B4DFF] hover:bg-[#8B3DFF] text-white rounded-full h-11">
             Iniciar sesión
           </Button>
+
+          <div className="relative my-2">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-[#1F1F1F]"></div>
+            </div>
+            <div className="relative flex justify-center text-xs">
+              <span className="px-2 bg-[#121212] text-gray-500">o</span>
+            </div>
+          </div>
 
           <Button
             type="button"
             onClick={handleBiometricLogin}
-            className="w-full bg-black text-white"
+            className="w-full bg-[#1A1A1A] hover:bg-[#2F2F2F] text-white border border-[#2F2F2F] rounded-full h-11"
           >
-            Iniciar con biometría
+            🔓 Iniciar con biometría
           </Button>
 
         </form>
 
-        <p className="text-sm text-center text-gray-600">
+        <p className="text-sm text-center text-gray-500 pt-2">
 
           ¿No tienes cuenta?{" "}
           <Link
             href="/register"
-            className="text-blue-600 hover:underline"
+            className="text-[#9B4DFF] hover:text-[#8B3DFF] transition-colors"
           >
             Regístrate
           </Link>
